@@ -2,6 +2,7 @@
 <html lang="en-GB"><head><meta charset="utf-8"><script>document.documentElement.classList.add("js");setTimeout(function(){if(!window.__rv)document.documentElement.classList.remove("js")},4000)</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>JT Garden Maintenance</title>
+<link rel="preload" as="image" href="/hero.jpg">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
 <style>
 :root{--bg:#fbfaf6;--card:#fff;--ink:#17261c;--mute:#5d6b61;--g1:#0b5d2a;--g2:#5cb82a;--acc:#b45309;--soft:#eef5e8;--line:#e2e8dc;--on:#fff;
@@ -73,11 +74,11 @@ footer a{color:inherit;text-decoration:none}footer a:hover{color:var(--acc);text
 .bar{position:fixed;left:0;top:0;height:3px;width:100%;background:var(--acc);transform-origin:0 50%;transform:scaleX(0);z-index:30}
 header{transition:box-shadow .3s}header.sc{box-shadow:0 10px 28px -18px rgba(0,0,0,.45)}
 .btn{transition:filter .2s,transform .2s,box-shadow .2s}.btn:hover{box-shadow:0 10px 24px -12px rgba(11,93,42,.6)}.btn:active{transform:scale(.98)}
-/* Hero: UK garden photo goes in public/hero.jpg. If the file is missing, the green gradient shows instead. */
+/* Hero: photo is public/hero.jpg. The dark-green wash is strongest behind the text (left) and fades so the photo shows on the right. */
 .hero{padding:92px 0 84px;color:#fff;background:
-  radial-gradient(900px 400px at 85% 0%,rgba(92,184,42,.22),transparent 60%),
-  linear-gradient(135deg,rgba(7,47,24,.88),rgba(11,93,42,.74) 65%,rgba(17,122,55,.62)),
+  linear-gradient(90deg,rgba(7,47,24,.82) 0%,rgba(7,47,24,.55) 55%,rgba(7,47,24,.12) 100%),
   url(/hero.jpg) center/cover no-repeat #0b5d2a}
+.hero h1,.hero p{text-shadow:0 1px 14px rgba(0,0,0,.35)}
 .hero h1 em{color:#ffa94d}.hero .eyebrow{color:#ffa94d}.hero p{color:rgba(255,255,255,.9)}
 .hero .btn{background:#fff;color:#0b5d2a}.hero .btn.o{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.65)}
 .hero .facts{color:rgba(255,255,255,.85)}.hero .facts b{color:#ffa94d}.hc{box-shadow:0 30px 70px -30px rgba(0,0,0,.6)}
@@ -89,6 +90,7 @@ section{padding:88px 0}
 
 /* phone layout */
 @media(max-width:760px){
+.hero{background:linear-gradient(rgba(7,47,24,.62),rgba(7,47,24,.62)),url(/hero.jpg) center/cover no-repeat #0b5d2a}
 body{overflow-x:clip}
 .w{padding:0 16px}
 section{padding:56px 0}
