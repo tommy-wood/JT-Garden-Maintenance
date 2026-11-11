@@ -1,7 +1,7 @@
 import { animate, inView } from "motion";
 window.__rv=1;
-const S=[["Grass cutting","Regular mowing, edging and strimming, weekly or fortnightly."],["Hedges","Trimmed square and sharp, with all the cuttings taken away."],["Trees","Pruning, shaping and lifting of small to medium trees."],["Pressure washing","Patios, drives and paths brought back to life."],["Gutter cleaning","Cleared by hand so water runs where it should."]];
-const T={w:[["Gutter clear-out","Autumn leaves block downpipes. Clear them before the wet weather.","Gutter cleaning"],["Winter pruning","Dormant trees and hedges take cutting back well.","Trees"],["Path and patio wash","Remove slippery algae before it gets icy.","Pressure washing"]],
+const S=[["Grass cutting","Regular mowing, edging and strimming, weekly or fortnightly."],["Hedges","Trimmed square and sharp, with all the cuttings taken away."],["Small trees","Pruning, shaping and lifting of small trees."],["Windows","Cleaned for a clear, streak-free finish."],["Pressure washing","Patios, drives and paths brought back to life."],["Gutter cleaning","Cleared by hand so water runs where it should."]];
+const T={w:[["Gutter clear-out","Autumn leaves block downpipes. Clear them before the wet weather.","Gutter cleaning"],["Winter pruning","Dormant trees and hedges take cutting back well.","Small trees"],["Path and patio wash","Remove slippery algae before it gets icy.","Pressure washing"]],
 sp:[["First mow of the year","Start with a high cut, then lower gradually.","Grass cutting"],["Hedge tidy","Trim before birds start nesting.","Hedges"],["Patio refresh","Wash off the winter green.","Pressure washing"]],
 su:[["Regular mowing","Weekly cuts keep the lawn thick and weed-free.","Grass cutting"],["Hedge shaping","Second trim of the year for fast growers.","Hedges"],["Drive wash","Best done in dry weather.","Pressure washing"]],
 a:[["Leaf clearance","Leaves smother lawns. Clear them often.","Grass cutting"],["Gutter cleaning","Do this once the leaves have fallen.","Gutter cleaning"],["Final hedge cut","One last tidy before winter.","Hedges"]]};
@@ -33,7 +33,7 @@ const sv=[...sel].join(", "),ds=`${dn[day.getDay()]} ${day.getDate()} ${M[day.ge
 det=`Services: ${sv}\nCustomer: ${$("nm").value.trim()}\nPhone: ${$("ph").value.trim()}\nPostcode: ${$("pc").value.trim()}${$("em").value?"\nEmail: "+$("em").value:""}${$("nt").value?"\nNotes: "+$("nt").value:""}`;
 $("dl").innerHTML=`<dt>Services</dt><dd>${sv}</dd><dt>Day</dt><dd>${ds}</dd><dt>Time</dt><dd>${time[0]} (${time[1]})</dd><dt>Name</dt><dd>${$("nm").value.trim()}</dd><dt>Postcode</dt><dd>${$("pc").value.trim().toUpperCase()}</dd>`;
 $("gcal").href="https://calendar.google.com/calendar/render?action=TEMPLATE&text="+encodeURIComponent("JT Garden: "+sv+" ("+$("nm").value.trim()+")")+"&dates="+fmt(day,time[2])+"/"+fmt(day,time[2]+2)+"&ctz=Europe/London&location="+encodeURIComponent($("pc").value.trim())+"&details="+encodeURIComponent(det);
-$("mail").href="mailto:?subject="+encodeURIComponent("Booking request: "+ds)+"&body="+encodeURIComponent(det+"\nDay: "+ds+" ("+time[1]+")");
+$("mail").href="mailto:gardenmaintenancejt@gmail.com?subject="+encodeURIComponent("Booking request: "+ds)+"&body="+encodeURIComponent(det+"\nDay: "+ds+" ("+time[1]+")");
 $("form").style.display="none";$("side").style.display="none";$("sum").classList.add("on")};
 $("redo").onclick=()=>{$("sum").classList.remove("on");$("form").style.display="";$("side").style.display=""};
 
@@ -48,4 +48,3 @@ if(!matchMedia("(prefers-reduced-motion: reduce)").matches){
 }
 const bar=document.querySelector(".bar"),hd=document.querySelector("header");
 addEventListener("scroll",()=>{hd.classList.toggle("sc",scrollY>8);bar.style.transform="scaleX("+(scrollY/Math.max(1,document.documentElement.scrollHeight-innerHeight))+")"},{passive:true});
-
