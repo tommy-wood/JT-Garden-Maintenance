@@ -4,10 +4,10 @@
 <title>JT Garden Maintenance</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
 <style>
-:root{--bg:#fbfaf6;--card:#fff;--ink:#17261c;--mute:#5d6b61;--g1:#0b5d2a;--g2:#5cb82a;--soft:#eef5e8;--line:#e2e8dc;--on:#fff;
+:root{--bg:#fbfaf6;--card:#fff;--ink:#17261c;--mute:#5d6b61;--g1:#0b5d2a;--g2:#5cb82a;--acc:#b45309;--soft:#eef5e8;--line:#e2e8dc;--on:#fff;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1711;--card:#16231a;--ink:#eaf1e6;--mute:#9fb0a3;--g1:#6fd13a;--g2:#5cb82a;--soft:#18281d;--line:#263a2c;--on:#0e1711}}
-:root[data-theme="dark"]{--bg:#0e1711;--card:#16231a;--ink:#eaf1e6;--mute:#9fb0a3;--g1:#6fd13a;--g2:#5cb82a;--soft:#18281d;--line:#263a2c;--on:#0e1711}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1711;--card:#16231a;--ink:#eaf1e6;--mute:#9fb0a3;--g1:#6fd13a;--g2:#5cb82a;--acc:#ff9a3c;--soft:#18281d;--line:#263a2c;--on:#0e1711}}
+:root[data-theme="dark"]{--bg:#0e1711;--card:#16231a;--ink:#eaf1e6;--mute:#9fb0a3;--g1:#6fd13a;--g2:#5cb82a;--acc:#ff9a3c;--soft:#18281d;--line:#263a2c;--on:#0e1711}
 html{scroll-behavior:smooth;scroll-padding-top:84px}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 Montserrat,system-ui,-apple-system,"Segoe UI",sans-serif}
@@ -16,31 +16,40 @@ header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 8
 header .w{display:flex;align-items:center;gap:20px;height:68px}
 .lg{background:#fff;border-radius:10px;padding:2px 6px;display:flex}.lg img{height:48px;display:block}
 nav{margin-left:auto;display:flex;gap:22px;font-size:14px;font-weight:600}
-nav a{color:var(--mute);text-decoration:none}nav a:hover{color:var(--g1)}
+nav a{color:var(--mute);text-decoration:none}nav a:hover{color:var(--acc)}
 .btn{display:inline-block;background:var(--g1);color:var(--on);border:0;border-radius:6px;padding:13px 22px;font:700 14px Montserrat,sans-serif;text-decoration:none;cursor:pointer}
 .btn:hover{filter:brightness(1.1)}.btn.o{background:transparent;color:var(--g1);box-shadow:inset 0 0 0 1.5px var(--g1)}
 header .btn{padding:10px 16px}
 @media(max-width:760px){nav{display:none}header .btn{margin-left:auto}}
 .hero{padding:64px 0 56px}.hero .w{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
 @media(max-width:860px){.hero .w{grid-template-columns:1fr}}
-.eyebrow{font:700 12px Montserrat;letter-spacing:.14em;text-transform:uppercase;color:var(--g1)}
+.eyebrow{font:700 12px Montserrat;letter-spacing:.14em;text-transform:uppercase;color:var(--acc)}
 h1{font-size:clamp(34px,5.4vw,58px);line-height:1.08;margin:12px 0 18px;font-weight:800;letter-spacing:-.02em}
-h1 em{font-style:normal;color:var(--g1)}
+h1 em{font-style:normal;color:var(--acc)}
 .hero p{color:var(--mute);max-width:520px;font-size:17px}.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
 .hc{background:#fff;border-radius:18px;padding:18px;box-shadow:0 20px 50px -25px rgba(11,93,42,.45)}.hc img{width:100%;display:block}
-.facts{display:flex;gap:26px;flex-wrap:wrap;margin-top:30px;font-size:13px;font-weight:600;color:var(--mute)}.facts b{color:var(--g1)}
+.facts{display:flex;gap:26px;flex-wrap:wrap;margin-top:30px;font-size:13px;font-weight:600;color:var(--mute)}.facts b{color:var(--acc)}
 section{padding:60px 0}h2{font-size:clamp(26px,3.6vw,38px);line-height:1.15;margin:8px 0 10px;font-weight:800;letter-spacing:-.015em}
 .sub{color:var(--mute);max-width:560px;margin:0 0 30px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px}
 .card h3{margin:0 0 6px;font-size:17px}.card p{margin:0;color:var(--mute);font-size:14px}
-.card .n{font:800 13px Montserrat;color:var(--g2);margin-bottom:10px}
-.card button{margin-top:14px;background:none;border:0;color:var(--g1);font:700 13px Montserrat;padding:0;cursor:pointer}
+.card .n{font:800 13px Montserrat;color:var(--acc);margin-bottom:10px}
+.card button{margin-top:14px;background:none;border:0;color:var(--acc);font:700 13px Montserrat;padding:0;cursor:pointer}
 .alt{background:var(--soft)}
 .season .card{display:flex;flex-direction:column}
 .tag{display:inline-block;background:var(--g1);color:var(--on);font:700 12px Montserrat;border-radius:99px;padding:4px 12px;margin-bottom:6px}
-.book{display:grid;grid-template-columns:1fr 1fr;gap:34px}@media(max-width:860px){.book{grid-template-columns:1fr}}
+
+/* booking: how-it-works runs full width above the form */
+.book{display:grid;grid-template-columns:1fr;gap:24px}
+#side{order:-1}
+#form,#sum{width:100%;max-width:760px;margin:0 auto}
 .panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:18px}
+@media(max-width:760px){.steps{grid-template-columns:1fr;gap:18px}}
+.step b{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--g1);color:var(--on);font:800 14px Montserrat;margin-bottom:10px}
+.step p{margin:0;font-size:15px;line-height:1.65;color:var(--mute)}
+
 label.l{display:block;font:700 12px Montserrat;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin:20px 0 8px}label.l:first-child{margin-top:0}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chip{border:1.5px solid var(--line);background:var(--bg);color:var(--ink);border-radius:99px;padding:8px 15px;font:600 13px Montserrat;cursor:pointer}
@@ -57,18 +66,22 @@ input:focus,textarea:focus{outline:2px solid var(--g2);border-color:transparent}
 .who{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
 .av{width:56px;height:56px;border-radius:50%;background:var(--g1);color:var(--on);display:grid;place-items:center;font:800 20px Montserrat;margin-bottom:12px}
 footer{padding:36px 0;border-top:1px solid var(--line);font-size:13px;color:var(--mute)}footer .w{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:inherit;text-decoration:none}footer a:hover{color:var(--acc);text-decoration:underline}
 
 /* polish + motion */
-.bar{position:fixed;left:0;top:0;height:3px;width:100%;background:var(--g2);transform-origin:0 50%;transform:scaleX(0);z-index:30}
+.bar{position:fixed;left:0;top:0;height:3px;width:100%;background:var(--acc);transform-origin:0 50%;transform:scaleX(0);z-index:30}
 header{transition:box-shadow .3s}header.sc{box-shadow:0 10px 28px -18px rgba(0,0,0,.45)}
 .btn{transition:filter .2s,transform .2s,box-shadow .2s}.btn:hover{box-shadow:0 10px 24px -12px rgba(11,93,42,.6)}.btn:active{transform:scale(.98)}
-.hero{padding:92px 0 84px;background:radial-gradient(900px 400px at 85% 0%,rgba(92,184,42,.28),transparent 60%),linear-gradient(135deg,#072f18,#0b5d2a 65%,#117a37);color:#fff}
-.hero h1 em{color:#9be56a}.hero .eyebrow{color:#9be56a}.hero p{color:rgba(255,255,255,.82)}
+/* Hero: UK garden photo goes in public/hero.jpg. If the file is missing, the green gradient shows instead. */
+.hero{padding:92px 0 84px;color:#fff;background:
+  radial-gradient(900px 400px at 85% 0%,rgba(92,184,42,.22),transparent 60%),
+  linear-gradient(135deg,rgba(7,47,24,.88),rgba(11,93,42,.74) 65%,rgba(17,122,55,.62)),
+  url(/hero.jpg) center/cover no-repeat #0b5d2a}
+.hero h1 em{color:#ffa94d}.hero .eyebrow{color:#ffa94d}.hero p{color:rgba(255,255,255,.9)}
 .hero .btn{background:#fff;color:#0b5d2a}.hero .btn.o{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.65)}
-.hero .facts{color:rgba(255,255,255,.78)}.hero .facts b{color:#9be56a}.hc{box-shadow:0 30px 70px -30px rgba(0,0,0,.6)}
+.hero .facts{color:rgba(255,255,255,.85)}.hero .facts b{color:#ffa94d}.hc{box-shadow:0 30px 70px -30px rgba(0,0,0,.6)}
 section{padding:88px 0}
-.card{transition:box-shadow .25s,border-color .25s,translate .25s}.card:hover{translate:0 -4px;border-color:var(--g2);box-shadow:0 18px 36px -20px rgba(11,93,42,.55)}
-.panel .card:hover{translate:none;box-shadow:none}
+.card{transition:box-shadow .25s,border-color .25s,translate .25s}.card:hover{translate:0 -4px;border-color:var(--acc);box-shadow:0 18px 36px -20px rgba(180,83,9,.45)}
 .band{background:linear-gradient(135deg,#072f18,#0b5d2a);color:#fff;padding:72px 0;text-align:center}.band h2{margin:0 0 10px;color:#fff}.band p{margin:0 auto 24px;color:rgba(255,255,255,.8);max-width:480px}.band .btn{background:#fff;color:#0b5d2a}
 .js :is(.hero .eyebrow,.hero h1,.hero p,.hero .cta,.hero .facts,.hc,section .eyebrow,section h2,section .sub,#svc .card,#tasks .card,.who .card,.book .panel,.band .w){opacity:0;transform:translateY(26px)}
 @media(prefers-reduced-motion:reduce){.js :is(.hero .eyebrow,.hero h1,.hero p,.hero .cta,.hero .facts,.hc,section .eyebrow,section h2,section .sub,#svc .card,#tasks .card,.who .card,.book .panel,.band .w){opacity:1;transform:none}}
@@ -76,11 +89,11 @@ section{padding:88px 0}
 <header><div class="w"><a class="lg" href="#top"><img alt="JT Garden Maintenance" src="/logo.jpg"></a>
 <nav><a href="#services">Services</a><a href="#season">This month</a><a href="#about">About</a></nav><a class="btn" href="#book">Book a visit</a></div></header>
 <main id="top">
-<div class="hero"><div class="w"><div><div class="eyebrow">Garden maintenance · Devon</div>
+<div class="hero"><div class="w"><div><div class="eyebrow">Garden maintenance · Plymouth &amp; Devon</div>
 <h1>Tidy gardens, <em>done properly</em> and on time.</h1>
-<p>Grass, hedges, trees, pressure washing and gutter cleaning, from two local lads who turn up when we say we will. Pick a day online and we’ll confirm it the same day.</p>
+<p>Grass, hedges, small trees, windows, pressure washing and gutter cleaning, and much more! From two local lads who are determined to get the job done.</p>
 <div class="cta"><a class="btn" href="#book">Book a visit</a><a class="btn o" href="#services">See what we do</a></div>
-<div class="facts"><span><b>Free</b> quotes</span><span><b>Fully</b> insured <i>(confirm)</i></span><span><b>Same-day</b> replies</span></div></div>
+<div class="facts"><span><b>Free</b> quotes</span><span><b>Fully</b> insured</span><span><b>Same-day</b> replies</span></div></div>
 <div class="hc"><img alt="JT Garden Maintenance logo" src="/logo.jpg"></div></div></div>
 
 <section id="services" class="alt"><div class="w"><div class="eyebrow">Services</div><h2>Everything outside, sorted.</h2><p class="sub">One call for the whole list. Mix and match, or set up regular visits.</p>
@@ -101,12 +114,15 @@ section{padding:88px 0}
 <a class="btn o" id="mail" style="width:100%;text-align:center;margin-top:10px">Send request by email</a>
 <p class="note">Prototype: requests aren’t sent to us automatically yet. The calendar and email buttons show how the hand-off will work.</p>
 <button class="chip" id="redo" style="margin-top:14px">Change details</button></div>
-<div class="panel" id="side"><h3 style="margin-top:0">How it works</h3><div class="card" style="border:0;padding:0 0 14px"><p><b>1.</b> Choose services and a day.</p></div><div class="card" style="border:0;padding:0 0 14px"><p><b>2.</b> Tommy or Joe confirms by text or phone, usually the same day.</p></div><div class="card" style="border:0;padding:0"><p><b>3.</b> We turn up, do the job, and leave it spotless.</p></div></div></div></div></section>
+<div class="panel" id="side"><h3 style="margin:0">How it works</h3><div class="steps">
+<div class="step"><b>1</b><p>Choose the services you need and a day that suits you.</p></div>
+<div class="step"><b>2</b><p>Tommy or Joe confirms by text or phone, usually the same day.</p></div>
+<div class="step"><b>3</b><p>We turn up, do the job, and leave it spotless.</p></div></div></div></div></div></section>
 
 <section id="about"><div class="w"><div class="eyebrow">About us</div><h2>Two of us. No call centres.</h2><p class="sub">You’ll deal with the people who actually do the work.</p>
-<div class="who"><div class="card"><div class="av">T</div><h3>Tommy</h3><p>[Add a line about Tommy: background, what he enjoys most, how long he’s been working outdoors.]</p></div>
+<div class="who"><div class="card"><div class="av">T</div><h3>Tommy</h3><p>Growing up in the South West, I’ve always enjoyed the outdoors with all that we have to offer on our doorstep. I have spent the last few years working with a local charity based in Plymouth building and maintaining microforests within the city and surrounding area. So no garden, big or small, is too much of a challenge!</p></div>
 <div class="card"><div class="av">J</div><h3>Joe</h3><p>[Add a line about Joe.]</p></div></div></div></section>
 </main>
 <div class="band"><div class="w"><h2>Ready for a tidier garden?</h2><p>Pick a day and we’ll confirm it the same day. No fuss, no call centre.</p><a class="btn" href="#book">Book a visit</a></div></div>
-<footer><div class="w"><span>© JT Garden Maintenance</span><span>[phone] · [email] · Covering [your areas]</span></div></footer>
+<footer><div class="w"><span>© JT Garden Maintenance</span><span><a href="mailto:gardenmaintenancejt@gmail.com">gardenmaintenancejt@gmail.com</a> · <a href="tel:07914832059">07914 832059</a> · <a href="tel:07956386958">07956 386958</a> · Covering Plymouth and surrounding areas</span></div></footer>
 <script type="module" src="/src/main.js"></script></body></html>
