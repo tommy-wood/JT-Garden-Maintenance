@@ -1,3 +1,5 @@
+import { animate, inView } from "motion";
+window.__rv=1;
 const S=[["Grass cutting","Regular mowing, edging and strimming, weekly or fortnightly."],["Hedges","Trimmed square and sharp, with all the cuttings taken away."],["Trees","Pruning, shaping and lifting of small to medium trees."],["Pressure washing","Patios, drives and paths brought back to life."],["Gutter cleaning","Cleared by hand so water runs where it should."]];
 const T={w:[["Gutter clear-out","Autumn leaves block downpipes. Clear them before the wet weather.","Gutter cleaning"],["Winter pruning","Dormant trees and hedges take cutting back well.","Trees"],["Path and patio wash","Remove slippery algae before it gets icy.","Pressure washing"]],
 sp:[["First mow of the year","Start with a high cut, then lower gradually.","Grass cutting"],["Hedge tidy","Trim before birds start nesting.","Hedges"],["Patio refresh","Wash off the winter green.","Pressure washing"]],
@@ -34,3 +36,16 @@ $("gcal").href="https://calendar.google.com/calendar/render?action=TEMPLATE&text
 $("mail").href="mailto:?subject="+encodeURIComponent("Booking request: "+ds)+"&body="+encodeURIComponent(det+"\nDay: "+ds+" ("+time[1]+")");
 $("form").style.display="none";$("side").style.display="none";$("sum").classList.add("on")};
 $("redo").onclick=()=>{$("sum").classList.remove("on");$("form").style.display="";$("side").style.display=""};
+
+const RV=".hero .eyebrow,.hero h1,.hero p,.hero .cta,.hero .facts,.hc,section .eyebrow,section h2,section .sub,#svc .card,#tasks .card,.who .card,.book .panel,.band .w";
+if(!matchMedia("(prefers-reduced-motion: reduce)").matches){
+  const ease=[.22,1,.36,1];
+  document.querySelectorAll(RV).forEach(el=>{
+    const i=[...el.parentElement.children].filter(c=>c.matches(RV)).indexOf(el);
+    inView(el,()=>{animate(el,{opacity:[0,1],transform:["translateY(26px)","translateY(0px)"]},{duration:.8,delay:Math.min(i,5)*.09,ease})},{margin:"0px 0px -10% 0px"});
+  });
+  animate(".bar",{transform:["scaleX(0)","scaleX(0)"]},{duration:0});
+}
+const bar=document.querySelector(".bar"),hd=document.querySelector("header");
+addEventListener("scroll",()=>{hd.classList.toggle("sc",scrollY>8);bar.style.transform="scaleX("+(scrollY/Math.max(1,document.documentElement.scrollHeight-innerHeight))+")"},{passive:true});
+
